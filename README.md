@@ -71,50 +71,6 @@ A modern, responsive web application for property management featuring user auth
    ```
    http://localhost:5173
    ```
-
-## 🔐 Environment Configuration
-
-This project uses environment variables for configuration. Copy `.env.example` to `.env` and update values:
-
-```env
-# Company Information
-VITE_ADMIN_EMAIL=your-admin@example.com
-VITE_COMPANY_EMAIL=your-company@example.com
-VITE_COMPANY_PHONE=+91-XXXXXXXXXX
-
-# Demo Credentials (for testing)
-VITE_DEMO_USER_EMAIL=demo@example.com
-VITE_DEMO_ADMIN_EMAIL=admin@example.com
-
-# Optional: EmailJS Configuration (for real email sending)
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-VITE_EMAILJS_ADMIN_TEMPLATE=your_admin_template
-VITE_EMAILJS_USER_TEMPLATE=your_user_template
-```
-
-## 🎯 Demo Accounts
-
-For testing purposes, use these demo credentials:
-
-### **User Account:**
-- **Email:** Configured via `VITE_DEMO_USER_EMAIL` (default: demo@example.com)
-- **Password:** demo123
-
-### **Admin Account:**
-- **Email:** Configured via `VITE_DEMO_ADMIN_EMAIL` (default: admin@example.com)  
-- **Password:** admin123
-
-## 📧 Email Setup (Optional)
-
-The application supports email notifications through EmailJS:
-
-1. **Create EmailJS account** at [emailjs.com](https://www.emailjs.com/)
-2. **Configure email service** (Gmail, Outlook, etc.)
-3. **Create email templates** for notifications
-4. **Update environment variables** with your EmailJS credentials
-5. **See `EMAIL_SETUP_GUIDE.md`** for detailed instructions
-
 ## 🛠️ Tech Stack
 
 ### **Frontend:**
@@ -208,14 +164,5 @@ clement-regency-developers/
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support & Documentation
-
-- **Setup Issues:** Check `GITHUB_SECURITY_GUIDE.md`
-- **Email Configuration:** See `EMAIL_SETUP_GUIDE.md`
-- **Backend Setup:** See `backend-structure/` directory
-- **GitHub Issues:** Open an issue for bug reports or feature requests
-
 ---
 
-**Made with ❤️ for modern property management solutions**
