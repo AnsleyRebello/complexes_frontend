@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import UserActivityService from '../services/UserActivityService'
-import { MapPin, Home, DollarSign, Heart, Calendar, Eye } from 'lucide-react'
+import { MapPin, Home, Heart, Calendar, Eye } from 'lucide-react'
 
 import { useAuth } from '../context/AuthContext'
 import { addFavoriteBuilding } from '../api/userApi'
@@ -51,9 +51,7 @@ const BuildingCard = ({ building, onFavoriteToggle }) => {
   }
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
+    return '₹' + new Intl.NumberFormat('en-IN', {
       minimumFractionDigits: 0
     }).format(price)
   }
@@ -158,7 +156,6 @@ const BuildingCard = ({ building, onFavoriteToggle }) => {
         {/* Price */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
-            <DollarSign size={18} className="text-green-500 mr-1" />
             <span className="text-2xl font-bold text-gray-900">
               {formatPrice(building.cost)}
             </span>

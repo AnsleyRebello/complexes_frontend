@@ -40,9 +40,7 @@ const FavoritesList = () => {
   }
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
+    return '₹' + new Intl.NumberFormat('en-IN', {
       minimumFractionDigits: 0
     }).format(price)
   }

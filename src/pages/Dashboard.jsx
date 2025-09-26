@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
-import { User, Heart, Calendar, Home, Settings, Bell, TrendingUp, Eye, MapPin, DollarSign } from 'lucide-react'
+import { User, Heart, Calendar, Home, Settings, Bell, TrendingUp, Eye, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { getAllBuildings } from '../api/buildingApi'
@@ -70,9 +70,7 @@ const Dashboard = () => {
   }
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
+    return '₹' + new Intl.NumberFormat('en-IN', {
       minimumFractionDigits: 0
     }).format(price)
   }

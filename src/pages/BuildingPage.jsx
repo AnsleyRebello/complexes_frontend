@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import UserActivityService from '../services/UserActivityService'
 
 import { 
-  MapPin, DollarSign, Home, Calendar, Heart, ArrowLeft, 
+  MapPin, Home, Calendar, Heart, ArrowLeft, 
   Bath, Bed, Car, Wifi, Shield, Dumbbell, ChevronLeft, ChevronRight
 } from 'lucide-react'
 import { getBuildingById } from '../api/buildingApi'
@@ -83,9 +83,7 @@ const BuildingPage = () => {
   }
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
+    return '₹' + new Intl.NumberFormat('en-IN', {
       minimumFractionDigits: 0
     }).format(price)
   }
@@ -245,7 +243,6 @@ const BuildingPage = () => {
                 </div>
                 <div className="text-right">
                   <div className="flex items-center justify-end mb-2">
-                    <DollarSign size={24} className="text-green-500 mr-1" />
                     <span className="text-4xl font-bold text-green-600">
                       {formatPrice(building.cost)}
                     </span>
