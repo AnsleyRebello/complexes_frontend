@@ -24,23 +24,15 @@ export default defineConfig({
           ],
           'dashboard-features': [
             './src/pages/Dashboard.jsx',
-            './src/pages/AdminDashboard.jsx'
+            './src/pages/AdminPage.jsx'
           ],
           'property-features': [
-            './src/pages/Properties.jsx',
-            './src/pages/PropertyDetails.jsx'
+            './src/pages/HomePage.jsx',
+            './src/pages/BuildingPage.jsx'
           ]
         }
       }
     },
-    chunkSizeWarningLimit: 1000, // Increase warning limit to 1MB
-    target: 'esnext',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true
-      }
-    }
+    chunkSizeWarningLimit: 1000 // Increase warning limit to 1MB
   }
 })

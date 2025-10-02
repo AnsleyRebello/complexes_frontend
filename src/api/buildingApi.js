@@ -1,13 +1,29 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:8080/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
 
 const buildingApi = axios.create({
   baseURL: `${API_BASE_URL}/buildings`,
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 60000, // 60 seconds for Render cold starts
 })
+
+// Add response interceptor for better error handling
+buildingApi.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.code === 'ECONNABORTED') {
+      console.warn('Request timeout - Render service may be cold starting')
+      error.message = 'Service is starting up, please try again in a moment...'
+    } else if (error.response?.status === 503) {
+      console.warn('Service temporarily unavailable')
+      error.message = 'Service is temporarily unavailable, please try again...'
+    }
+    return Promise.reject(error)
+  }
+)
 
 // Attach JWT token if available
 buildingApi.interceptors.request.use((config) => {
