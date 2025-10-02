@@ -23,10 +23,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app/api/**/*": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
