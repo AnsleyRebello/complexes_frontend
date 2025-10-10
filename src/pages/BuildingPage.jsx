@@ -22,6 +22,13 @@ const BuildingPage = () => {
   const [isFavorite, setIsFavorite] = useState(false)
 
   const fetchBuilding = useCallback(async () => {
+    if (!id || id === 'null' || id === 'undefined') {
+      console.error('No valid building ID provided')
+      toast.error('Invalid property ID')
+      setLoading(false)
+      return
+    }
+
     try {
       const data = await getBuildingById(id)
       setBuilding(data)

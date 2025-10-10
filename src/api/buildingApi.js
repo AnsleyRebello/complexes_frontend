@@ -44,6 +44,9 @@ export const getAllBuildings = async () => {
 
 // Get single building
 export const getBuildingById = async (id) => {
+  if (!id || id === 'null' || id === 'undefined') {
+    throw new Error('Invalid building ID provided')
+  }
   const response = await buildingApi.get(`/${id}`)
   return response.data
 }
@@ -66,11 +69,17 @@ export const createBuilding = async (buildingData) => {
 }
 
 export const updateBuilding = async (id, buildingData) => {
+  if (!id || id === 'null' || id === 'undefined') {
+    throw new Error('Invalid building ID provided')
+  }
   const response = await buildingApi.put(`/${id}`, buildingData)
   return response.data
 }
 
 export const deleteBuilding = async (id) => {
+  if (!id || id === 'null' || id === 'undefined') {
+    throw new Error('Invalid building ID provided')
+  }
   const response = await buildingApi.delete(`/${id}`)
   return response.data
 }

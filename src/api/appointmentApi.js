@@ -83,6 +83,9 @@ export const getUserAppointments = async (userId) => {
 
 export const cancelAppointment = async (appointmentId) => {
   try {
+    if (!appointmentId || appointmentId === 'null' || appointmentId === 'undefined') {
+      throw new Error('Invalid appointment ID provided')
+    }
     const response = await appointmentApi.delete(`/${appointmentId}`)
     return response.data
   } catch (error) {

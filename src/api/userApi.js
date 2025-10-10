@@ -44,6 +44,12 @@ export const loginUser = async (credentials) => {
 }
 
 export const addFavoriteBuilding = async (userId, buildingId) => {
+  if (!userId || userId === 'null' || userId === 'undefined') {
+    throw new Error('Invalid user ID provided')
+  }
+  if (!buildingId || buildingId === 'null' || buildingId === 'undefined') {
+    throw new Error('Invalid building ID provided')
+  }
   const response = await userApi.post(`/${userId}/favorites/${buildingId}`)
   return response.data
 }

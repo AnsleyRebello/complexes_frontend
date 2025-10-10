@@ -176,6 +176,9 @@ export const getAllAppointments = async () => {
 // Update user role (admin only)
 export const updateUserRole = async (userId, newRole) => {
   try {
+    if (!userId || userId === 'null' || userId === 'undefined') {
+      throw new Error('Invalid user ID provided')
+    }
     const response = await adminApi.patch(`/users/${userId}/role`, { role: newRole })
     return response.data
   } catch (error) {
@@ -187,6 +190,9 @@ export const updateUserRole = async (userId, newRole) => {
 // Delete user (admin only)
 export const deleteUser = async (userId) => {
   try {
+    if (!userId || userId === 'null' || userId === 'undefined') {
+      throw new Error('Invalid user ID provided')
+    }
     const response = await adminApi.delete(`/users/${userId}`)
     return response.data
   } catch (error) {
@@ -198,6 +204,9 @@ export const deleteUser = async (userId) => {
 // Update appointment status
 export const updateAppointmentStatus = async (appointmentId, status) => {
   try {
+    if (!appointmentId || appointmentId === 'null' || appointmentId === 'undefined') {
+      throw new Error('Invalid appointment ID provided')
+    }
     const response = await adminApi.patch(`/appointments/${appointmentId}/status`, { status })
     return response.data
   } catch (error) {
@@ -209,6 +218,9 @@ export const updateAppointmentStatus = async (appointmentId, status) => {
 // Delete appointment
 export const deleteAppointment = async (appointmentId) => {
   try {
+    if (!appointmentId || appointmentId === 'null' || appointmentId === 'undefined') {
+      throw new Error('Invalid appointment ID provided')
+    }
     const response = await adminApi.delete(`/appointments/${appointmentId}`)
     return response.data
   } catch (error) {
