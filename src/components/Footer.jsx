@@ -75,15 +75,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-300">
                 <MapPin size={18} />
-                <span>123 Real Estate Ave, City, State 12345</span>
+                <span>Shop No. 5 & 6, The Woods, Juniper, Wing-A, Brahman Ali, Papdy, Vasai</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone size={18} />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 98500 19171</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail size={18} />
-                <span>info@clementregency.com</span>
+                <span>rebelloneville@gmail.com</span>
               </div>
             </div>
           </motion.div>
